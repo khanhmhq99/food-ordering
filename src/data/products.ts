@@ -1,4 +1,6 @@
-const products = [
+import { Product } from '@/src/models/types';
+
+const products: Product[] = [
   {
     id: 1,
     name: 'Ultimate Pepperoni',
