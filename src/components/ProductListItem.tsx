@@ -1,16 +1,23 @@
 import Colors from '@/src/constants/Colors';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { Product } from '../models/types';
+import { Link } from 'expo-router';
 
 type ProducListItemProps = { product: Product };
 
 const ProductListItem = ({ product }: ProducListItemProps) => {
   return (
-    <View style={styles.container}>
-      <Image source={{ uri: product.image || '' }} style={styles.image} />
-      <Text style={styles.title}>{product.name}</Text>
-      <Text style={styles.price}>${product.price}</Text>
-    </View>
+    <Link href={`/menu/${product.id}`} asChild>
+      <Pressable style={styles.container}>
+        <Image
+          source={{ uri: product.image || '' }}
+          resizeMode="contain"
+          style={styles.image}
+        />
+        <Text style={styles.title}>{product.name}</Text>
+        <Text style={styles.price}>${product.price}</Text>
+      </Pressable>
+    </Link>
   );
 };
 
@@ -21,6 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 10,
     borderRadius: 20,
+    flex: 1,
   },
   image: {
     width: '100%',
