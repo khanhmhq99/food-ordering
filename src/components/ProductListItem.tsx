@@ -6,7 +6,7 @@ import { Link, useSegments } from 'expo-router';
 type ProducListItemProps = { product: Product };
 
 export const defaultPizzaImage: string =
-  'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png';
+  'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png';
 
 const ProductListItem = ({ product }: ProducListItemProps) => {
   const segments = useSegments();
