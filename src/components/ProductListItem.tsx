@@ -5,6 +5,9 @@ import { Link } from 'expo-router';
 
 type ProducListItemProps = { product: Product };
 
+export const defaultPizzaImage: string =
+  'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png';
+
 const ProductListItem = ({ product }: ProducListItemProps) => {
   return (
     <Link href={`/menu/${product.id}`} asChild>
